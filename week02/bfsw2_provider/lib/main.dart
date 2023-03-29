@@ -1,5 +1,11 @@
-import 'package:bfsw2_provider/model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../theme_changer.dart';
+import '/Auth/auth_provider.dart';
+import 'home_page.dart';
+import '../auth.dart';
+import 'model/product.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,98 +16,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController desController = TextEditingController();
-  TextEditingController prController = TextEditingController();
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ProductItem(),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addItems,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-
-  void addItems() {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) => Container(
-        height: 300,
-        width: double.infinity,
-        color: Colors.amberAccent,
-        child: Expanded(
-          child: ListView(
-            children: [
-              TextField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  label: Text('Name'),
-                ),
-              ),
-              TextField(
-                controller: desController,
-                decoration: const InputDecoration(
-                  label: Text('Description'),
-                ),
-              ),
-              TextField(
-                controller: desController,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  label: Text('Price'),
-                ),
-              ),
-              ElevatedButton(
-                onPressed: saveItems,
-                child: const Text('Save'),
-              ),
-            ],
+        ChangeNotifierProvider(
+          create: (context) => ThemeChanger(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AuthProvider(),
+        ),
+      ],
+      child: Builder(builder: (context) {
+        final theme = Provider.of<ThemeChanger>(context);
+        return MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          themeMode: theme.themeMode,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
           ),
-        ),
-      ),
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+          ),
+          home: const Auth(),
+        );
+      }),
     );
-  }
-
-  void saveItems() {
-    Product pro = Product(1, 'name', 'description', 0);
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_initializing_formals
+
 import 'package:flutter/material.dart';
 
 class Product with ChangeNotifier {
@@ -6,10 +8,8 @@ class Product with ChangeNotifier {
   String? description;
   double? price;
 
-  Product(int id, String name, String description, double price) {
+  Product(int id, String this.name, String this.description, double price) {
     this.id = id;
-    this.name = name;
-    this.description = description;
     this.price = price;
   }
 }
@@ -30,7 +30,7 @@ class ProductItem with ChangeNotifier {
     notifyListeners();
   }
 
-  deleteItem(int id, Product product) {
+  deleteItem(int id) {
     if (id >= 0) {
       _item.removeWhere(
         ((element) => element.id == id),
