@@ -46,7 +46,6 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.dark,
             ),
             themeMode: theme.themMode,
-            // home: const SplashScreen(),
             home: const SplashScreen(),
             routes: {
               NotesDetails.routName: (context) => const NotesDetails(),

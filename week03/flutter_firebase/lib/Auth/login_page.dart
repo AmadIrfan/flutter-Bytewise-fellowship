@@ -167,18 +167,6 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    // OutlinedButton(
-                    //   onPressed: () {
-                    //     // Provider.of<AuthModel>(context).loginWithMobile();
-                    //     Navigator.pushReplacement(
-                    //       context,
-                    //       MaterialPageRoute(
-                    //         builder: (context) => const LoginWithPhone(),
-                    //       ),
-                    //     );
-                    //   },
-                    //   child: const Text('Login with Phone number'),
-//                    ),
                   ],
                 ),
               ),

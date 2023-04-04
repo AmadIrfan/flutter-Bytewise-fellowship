@@ -1,0 +1,4 @@
+Flutter Firebase :
+This week we learned about the Firebase Firestore database, firebase real-time database, and Firebase authentication. 
+I have made a note app using Firebase real-time database. we can create, edit delete and view notes.
+And I am also working on a blog app using firebase firestore database
