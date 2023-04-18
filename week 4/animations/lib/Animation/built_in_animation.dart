@@ -11,6 +11,16 @@ class BuiltInAnimation extends StatefulWidget {
 class _BuiltInAnimationState extends State<BuiltInAnimation> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body:
+        Center(
+          child: MaterialButton(
+            onPressed: (){
+
+            },
+            child:const Text('Material Button'),
+          ),
+        )
+    );
   }
 }

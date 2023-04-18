@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class UserDefineAnimation extends StatefulWidget {
   const UserDefineAnimation({Key? key}) : super(key: key);
 
@@ -11,6 +10,13 @@ class UserDefineAnimation extends StatefulWidget {
 class _UserDefineAnimationState extends State<UserDefineAnimation> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text('Elevated Button'),
+        ),
+      ),
+    );
   }
 }

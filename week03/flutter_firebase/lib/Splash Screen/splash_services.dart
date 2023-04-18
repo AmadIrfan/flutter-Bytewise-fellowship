@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_firebase/Auth/login_page.dart';
+import 'package:flutter_firebase/fire_store_home.dart';
 import '../windows/home_page.dart';
 
 class SplashServices {
@@ -23,7 +24,7 @@ class SplashServices {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const HomePage(),
+              builder: (context) => const FirebaseFireStoreHome(),
             ),
           );
         } else {
