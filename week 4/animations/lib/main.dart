@@ -2,6 +2,8 @@ import 'package:animations/Animation/built_in_animation.dart';
 import 'package:animations/Animation/user_define_animation.dart';
 import 'package:flutter/material.dart';
 
+import 'Animation/tween_animation_build.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,7 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       title: 'Animation',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -36,7 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
+      initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Animations'),
@@ -44,6 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
             tabs: [
               Tab(
                 text: "Built in Animation",
+                icon: Icon(Icons.animation),
+              ),
+              Tab(
+                text: "Tween Animation",
                 icon: Icon(Icons.animation),
               ),
               Tab(
@@ -56,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: const TabBarView(
           children: [
             BuiltInAnimation(),
+            TweenAnimationBuild(),
             UserDefineAnimation(),
           ],
         ),
