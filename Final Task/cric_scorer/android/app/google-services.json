@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "463426642499",
+    "project_id": "cricket-scorer-c276c",
+    "storage_bucket": "cricket-scorer-c276c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463426642499:android:dec8fdce1f92179c166af6",
+        "android_client_info": {
+          "package_name": "com.example.cric_scorer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463426642499-pesdqg9e6abnr48hf1ei41o83cml1pm0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrcdkjI337Qwcrt6fg9CGTYhLMD5sXops"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463426642499-pesdqg9e6abnr48hf1ei41o83cml1pm0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
